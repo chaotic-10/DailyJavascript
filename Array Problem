@@ -1,0 +1,18 @@
+var mergeAlternately = function(word1, word2) {
+    let mini = Math.min(word1.length, word2.length); // Corrected the minimum length calculation
+    let str = "";
+
+    for (let i = 0; i < mini; i++) {
+        str += word1[i];
+        str += word2[i];
+    }
+
+    // Append the remaining characters from the longer string
+    if (word1.length > mini) {
+        str += word1.substring(mini);
+    } else if (word2.length > mini) {
+        str += word2.substring(mini);
+    }
+
+    return str;
+};
